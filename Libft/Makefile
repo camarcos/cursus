@@ -6,17 +6,23 @@
 #    By: camarcos <camarcos@student.42madrid>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/03 15:21:28 by camarcos          #+#    #+#              #
-#    Updated: 2024/04/04 18:56:46 by camarcos         ###   ########.fr        #
+#    Updated: 2024/04/15 12:46:55 by camarcos         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
 CC = gcc
+
+RM = rm -f
+
+ARFLAGS = -rc 
+
 CFLAGS = -Wall -Werror -Wextra
 
-SOURCES = \
-		ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
+AR = ar
+
+SOURCES = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 		ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c \
 		ft_strlcpy.c ft_strlcat.c ft_toupper.c ft_tolower.c ft_strchr.c \
 		ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c \
@@ -24,21 +30,27 @@ SOURCES = \
 		ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c \
 		ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
 
+BONUSRCS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
+		   ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
+		   ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c \
+
 OBJECTS = $(SOURCES:.c=.o)
+
+BONUS = $(BONUSRCS:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
-	$(AR) -rcs $@ $^
+	$(AR) $(ARFLAGS) $(NAME) $(OBJECTS)
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c -o $@ $<
+bonus: $(BONUS)
+	$(AR) $(ARFLAGS) $(NAME) $(BONUS)
 
 clean:
-	rm -f $(OBJECTS)
+	$(RM) $(OBJECTS) $(BONUS)
 
 fclean: clean
-	rm -f $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all
 

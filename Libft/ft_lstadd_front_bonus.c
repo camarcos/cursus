@@ -1,38 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: camarcos <camarcos@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/01 11:23:19 by camarcos          #+#    #+#             */
-/*   Updated: 2024/04/05 13:45:53 by camarcos         ###   ########.fr       */
+/*   Created: 2024/04/08 13:20:09 by camarcos          #+#    #+#             */
+/*   Updated: 2024/04/08 13:22:11 by camarcos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	char	*ptr;
-	size_t	i;
-	size_t	slen;
-
-	slen = ft_strlen(s);
-	if (!s)
-		return (NULL);
-	if (start >= slen)
-		return (ft_strdup(""));
-	if (start + len > slen)
-		len = slen - start;
-	ptr = ft_calloc(len + 1, sizeof(char));
-	if (!ptr)
-		return (NULL);
-	i = 0;
-	while (i < len)
+	if (new != NULL)
 	{
-		ptr[i] = s[start + i];
-		i++;
+		new->next = *lst;
+		*lst = new;
 	}
-	return (ptr);
 }

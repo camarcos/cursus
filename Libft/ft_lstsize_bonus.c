@@ -1,38 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: camarcos <camarcos@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/01 11:23:19 by camarcos          #+#    #+#             */
-/*   Updated: 2024/04/05 13:45:53 by camarcos         ###   ########.fr       */
+/*   Created: 2024/04/08 13:32:43 by camarcos          #+#    #+#             */
+/*   Updated: 2024/04/08 16:00:07 by camarcos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+int	ft_lstsize(t_list *lst)
 {
-	char	*ptr;
-	size_t	i;
-	size_t	slen;
+	int	i;
 
-	slen = ft_strlen(s);
-	if (!s)
-		return (NULL);
-	if (start >= slen)
-		return (ft_strdup(""));
-	if (start + len > slen)
-		len = slen - start;
-	ptr = ft_calloc(len + 1, sizeof(char));
-	if (!ptr)
-		return (NULL);
+	if (!lst)
+		return (0);
 	i = 0;
-	while (i < len)
+	while (lst != NULL)
 	{
-		ptr[i] = s[start + i];
 		i++;
+		lst = lst->next;
 	}
-	return (ptr);
+	return (i);
 }
