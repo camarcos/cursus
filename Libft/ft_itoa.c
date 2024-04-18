@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camarcos <camarcos@student.42madrid>       +#+  +:+       +#+        */
+/*   By: camarcos <camarcos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 10:05:43 by camarcos          #+#    #+#             */
-/*   Updated: 2024/04/04 14:15:44 by camarcos         ###   ########.fr       */
+/*   Updated: 2024/04/18 13:05:14 by camarcos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@ static size_t	getlen(int n)
 
 	len = 0;
 	if (n <= 0)
+	{
 		len = 1;
+	}
 	while (n != 0)
 	{
 		n /= 10;
@@ -54,3 +56,12 @@ char	*ft_itoa(int n)
 	}
 	return (str);
 }
+/*
+int main()
+{
+	int n = 123456;
+	printf("%s\n", ft_itoa(n));
+	return 0;
+}
+*/
+//convierte un entero a un character

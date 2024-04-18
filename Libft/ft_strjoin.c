@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camarcos <camarcos@student.42madrid>       +#+  +:+       +#+        */
+/*   By: camarcos <camarcos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 10:06:19 by camarcos          #+#    #+#             */
-/*   Updated: 2024/04/02 12:30:15 by camarcos         ###   ########.fr       */
+/*   Updated: 2024/04/18 11:56:06 by camarcos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,3 +31,13 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (ptr);
 	}
 }
+/*
+int main()
+{
+	char *str1 = "Hello ";
+	char *str2 = "World";
+	printf("%s\n", ft_strjoin(str1, str2));
+	return 0;
+}
+*/
+//concatena dos cadenas en una nueva cadena(ptr) 

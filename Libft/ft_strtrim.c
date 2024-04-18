@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camarcos <camarcos@student.42madrid>       +#+  +:+       +#+        */
+/*   By: camarcos <camarcos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 12:33:51 by camarcos          #+#    #+#             */
-/*   Updated: 2024/04/04 18:51:08 by camarcos         ###   ########.fr       */
+/*   Updated: 2024/04/18 13:00:12 by camarcos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,3 +45,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 	ft_strlcpy(ptr, ini, ptrlen + 1);
 	return (ptr);
 }
+/*
+int main()
+{
+	char *str1 = "Hello World";
+	char *str2 = "Hello";
+	printf("%s\n", ft_strtrim(str1, str2));
+	return 0;
+}
+*/
+//corta y copia ejecutandose tanto or el inicio como por el final

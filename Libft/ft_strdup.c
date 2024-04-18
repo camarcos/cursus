@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camarcos <camarcos@student.42madrid>       +#+  +:+       +#+        */
+/*   By: camarcos <camarcos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 18:25:24 by camarcos          #+#    #+#             */
-/*   Updated: 2024/04/01 11:22:41 by camarcos         ###   ########.fr       */
+/*   Updated: 2024/04/18 10:52:07 by camarcos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,3 +33,13 @@ char	*ft_strdup(const char *s1)
 	mem[i] = '\0';
 	return (mem);
 }
+/*
+int main()
+{
+	char *str = "Hello World";
+	printf("%s\n", ft_strdup(str));
+	return 0;
+}
+*/
+// duplica cadena de string includo el caracter nulo
+// if (mem == NULL) para compromabar si se ha reservado memoria correctamente

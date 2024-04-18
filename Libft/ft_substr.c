@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camarcos <camarcos@student.42madrid>       +#+  +:+       +#+        */
+/*   By: camarcos <camarcos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 11:23:19 by camarcos          #+#    #+#             */
-/*   Updated: 2024/04/05 13:45:53 by camarcos         ###   ########.fr       */
+/*   Updated: 2024/04/18 10:55:29 by camarcos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,3 +36,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	return (ptr);
 }
+/*
+int main()
+{
+	char *str = "Hello World";
+	printf("%s\n", ft_substr(str, 6, 5));
+	return 0;
+}
+*/
+// se utiliza para extraer una parte de una cadena dada

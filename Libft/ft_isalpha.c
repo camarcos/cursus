@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camarcos <camarcos@student.42madrid>       +#+  +:+       +#+        */
+/*   By: camarcos <camarcos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 13:21:39 by camarcos          #+#    #+#             */
-/*   Updated: 2024/04/03 14:27:44 by camarcos         ###   ########.fr       */
+/*   Updated: 2024/04/18 10:32:15 by camarcos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,3 +20,11 @@ int	ft_isalpha(int c)
 	}
 	return (0);
 }
+/*
+int main()
+{
+	char c = 'a';
+	printf("%d\n", ft_isalpha(c));
+	return 0;
+}
+*/

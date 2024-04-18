@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camarcos <camarcos@student.42madrid>       +#+  +:+       +#+        */
+/*   By: camarcos <camarcos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 12:34:25 by camarcos          #+#    #+#             */
-/*   Updated: 2024/04/04 18:53:10 by camarcos         ###   ########.fr       */
+/*   Updated: 2024/04/18 13:51:45 by camarcos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,26 @@
 
 static size_t	count_words(char const *s, char c)
 {
-	const char	*aux;
+	const char	*reco;
 	size_t		count;
 
-	aux = s;
+	reco = s;
 	count = 0;
-	while (*aux)
+	while (*reco)
 	{
-		while (*aux == c && *aux != '\0')
-			aux++;
-		if (*aux != '\0')
+		while (*reco == c && *reco != '\0')
+			reco++;
+		if (*reco != '\0')
 		{
 			count++;
-			while (*aux && (*aux != c))
-				aux++;
+			while (*reco && (*reco != c))
+				reco++;
 		}
 	}
 	return (count);
 }
 
-static char	**free_arr(char **arr, size_t i)
+static char	**free_memarr(char **arr, size_t i)
 {
 	while (i--)
 		free(arr[i]);
@@ -41,7 +41,7 @@ static char	**free_arr(char **arr, size_t i)
 	return (NULL);
 }
 
-static char	*allocate_word(char const *start, size_t len)
+static char	*allocate_memword(char const *start, size_t len)
 {
 	char	*word;
 
@@ -56,44 +56,45 @@ char	**ft_split(char const *s, char c)
 {
 	char		**arr;
 	const char	*start;
-	size_t		num_words;
+	size_t		numwords;
 	size_t		i;
 
 	if (!s)
 		return (NULL);
-	num_words = count_words(s, c);
-	arr = (char **)ft_calloc(num_words + 1, sizeof(char *));
+	numwords = count_words(s, c);
+	arr = (char **)ft_calloc(numwords + 1, sizeof(char *));
 	if (!arr)
 		return (NULL);
 	i = -1;
-	while (++i < num_words)
+	while (++i < numwords)
 	{
 		while (*s == c && *s)
 			s++;
 		start = s;
 		while (*s && *s != c)
 			s++;
-		arr[i] = allocate_word(start, s - start);
+		arr[i] = allocate_memword(start, s - start);
 		if (!arr[i])
-			return (free_arr(arr, i));
+			return (free_memarr(arr, i));
 	}
 	arr[i] = NULL;
 	return (arr);
 }
 
 /*
-int main() {
-    char *splitme = "Tripouille";
-    char **tab = ft_split(splitme, ' ');
-    // Imprimir el resultado
-    if (tab != NULL) {
-        for (int i = 0; tab[i] != NULL; i++) {
-            printf("Word %d: %s\n", i + 1, tab[i]);
-            free(tab[i]); // Liberar cada cadena asignada
-        }
-        free(tab); // Liberar el array de punteros
-    } else {
-        printf("Error: ft_split returned NULL\n");
-    }
-    return 0;
+int main()
+{
+	char **arr;
+	int i;
+
+	arr = ft_split("Hola que tal estas", ' ');
+	i = 0;
+	while (arr[i])
+	{
+		ft_putstr_fd(arr[i], 1);
+		ft_putchar_fd('\n', 1);
+		i++;
+	}
+	return 0;
 }*/
+// reserva un array de strings resultante de dividir la string en substrings

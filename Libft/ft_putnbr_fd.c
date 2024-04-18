@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camarcos <camarcos@student.42madrid>       +#+  +:+       +#+        */
+/*   By: camarcos <camarcos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 16:07:50 by camarcos          #+#    #+#             */
-/*   Updated: 2024/04/03 15:14:13 by camarcos         ###   ########.fr       */
+/*   Updated: 2024/04/18 13:29:18 by camarcos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,3 +33,11 @@ void	ft_putnbr_fd(int n, int fd)
 	digit = n % 10 + '0';
 	write(fd, &digit, 1);
 }
+/*
+int main()
+{
+	ft_putnbr_fd(1234567890, 1);
+	return 0;
+}
+*/
+// escribe el numero en el file descriptor, parecido a ft_putnbr.c pero con fd

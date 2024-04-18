@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camarcos <camarcos@student.42madrid>       +#+  +:+       +#+        */
+/*   By: camarcos <camarcos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 16:27:55 by camarcos          #+#    #+#             */
-/*   Updated: 2024/03/25 12:54:52 by camarcos         ###   ########.fr       */
+/*   Updated: 2024/04/18 10:36:06 by camarcos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	const char	*haystack_tem;
-	const char	*needle_tem;
+	const char	*haystack_mem;
+	const char	*needle_mem;
 	size_t		i;
 
 	if (*needle == '\0')
@@ -23,27 +23,31 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	while (*haystack && len > 0)
 	{
 		i = len;
-		haystack_tem = haystack;
-		needle_tem = needle;
-		while (i-- > 0 && *haystack_tem && *needle_tem
-			&& *haystack_tem == *needle_tem)
+		haystack_mem = haystack;
+		needle_mem = needle;
+		while (i-- > 0 && *haystack_mem && *needle_mem
+			&& *haystack_mem == *needle_mem)
 		{
-			haystack_tem++;
-			needle_tem++;
+			haystack_mem++;
+			needle_mem++;
 		}
-		if (*needle_tem == '\0')
+		if (*needle_mem == '\0')
 			return ((char *)haystack);
 		haystack++;
 		len--;
 	}
 	return (0);
 }
-
-/*int	main(void)
+/*
+int main()
 {
-	char *c = "abcdefgh";
-	char *q = "def";
-	printf("%s \n", ft_strnstr(c, q, 5));
-	printf("%s \n", strnstr(c, q, 5));
-	return (0);
-}*/
+	char s1[] = "abcdefgh";
+	char s2[] = "def";
+	size_t n = 5;
+	printf("%s\n", ft_strnstr(s1, s2, n));
+	printf("%s\n", strnstr(s1, s2, n));
+	return 0;
+}
+*/
+//busca la primera aparicion de la subcadena y en la cadena principal
+// needle es la subcadena y haystack es la cadena principal

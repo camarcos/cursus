@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camarcos <camarcos@student.42madrid>       +#+  +:+       +#+        */
+/*   By: camarcos <camarcos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 13:27:53 by camarcos          #+#    #+#             */
-/*   Updated: 2024/03/25 13:28:02 by camarcos         ###   ########.fr       */
+/*   Updated: 2024/04/18 10:35:00 by camarcos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,12 @@ int	ft_tolower(int c)
 	}
 	return (c);
 }
+/*
+int main()
+{
+	char c = 'A';
+	printf("%c\n", ft_tolower(c));
+	return 0;
+}
+*/
 // de mayuscula a minuscula

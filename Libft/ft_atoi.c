@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camarcos <camarcos@student.42madrid>       +#+  +:+       +#+        */
+/*   By: camarcos <camarcos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 13:01:26 by camarcos          #+#    #+#             */
-/*   Updated: 2024/04/03 12:30:27 by camarcos         ###   ########.fr       */
+/*   Updated: 2024/04/18 10:26:31 by camarcos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_atoi(const char *str)
 	i = 0;
 	total = 0;
 	sing = 1;
-	while ((str[i] == 32) || (str[i] >= 9 && str[i] <= 13))
+	while ((str[i] == ' ') || (str[i] >= 9 && str[i] <= 13))
 	{
 		i++;
 	}
@@ -45,3 +45,4 @@ int	main()
 	printf("%d", ft_atoi("-1235e34"));
 	return 0;
 }*/
+// paso de un character a un entero

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camarcos <camarcos@student.42madrid>       +#+  +:+       +#+        */
+/*   By: camarcos <camarcos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 13:26:56 by camarcos          #+#    #+#             */
-/*   Updated: 2024/03/25 13:27:07 by camarcos         ###   ########.fr       */
+/*   Updated: 2024/04/18 10:34:37 by camarcos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,3 +32,15 @@ size_t	ft_strlcat(char *dst, const char *org, size_t sizedst)
 	*(dst + cont) = '\0';
 	return (londst + lonorg);
 }
+/*
+int main()
+{
+	char dst[50] = "Hola";
+	char org[50] = "Mundo";
+	size_t sizedst = 10;
+	printf("%lu\n", ft_strlcat(dst, org, sizedst));
+	printf("%s\n", dst);
+	return 0;
+}
+*/
+// concatena cadenas de forma segura evitando desbordamientos

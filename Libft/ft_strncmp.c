@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camarcos <camarcos@student.42madrid>       +#+  +:+       +#+        */
+/*   By: camarcos <camarcos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 13:28:55 by camarcos          #+#    #+#             */
-/*   Updated: 2024/03/25 13:29:14 by camarcos         ###   ########.fr       */
+/*   Updated: 2024/04/18 10:35:33 by camarcos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,3 +32,15 @@ int	ft_strncmp(const char *s1, const char *s2, size_t c)
 	}
 	return (0);
 }
+/*
+int main()
+{
+	char s1[] = "Hello World";
+	char s2[] = "Hello World";
+	size_t c = 5;
+	printf("%d\n", ft_strncmp(s1, s2, c));
+	return 0;
+}
+*/
+// compara dos cadenas hasta cirto numero de caracteres
+//o hasta que ecuentre un caracter diferente

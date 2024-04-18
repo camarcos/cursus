@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: camarcos <camarcos@student.42madrid>       +#+  +:+       +#+         #
+#    By: camarcos <camarcos@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/03 15:21:28 by camarcos          #+#    #+#              #
-#    Updated: 2024/04/15 12:46:55 by camarcos         ###   ########.fr        #
+#    Updated: 2024/04/17 12:13:56 by camarcos         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 

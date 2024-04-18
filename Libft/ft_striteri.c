@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camarcos <camarcos@student.42madrid>       +#+  +:+       +#+        */
+/*   By: camarcos <camarcos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 12:36:48 by camarcos          #+#    #+#             */
-/*   Updated: 2024/04/03 12:25:40 by camarcos         ###   ########.fr       */
+/*   Updated: 2024/04/18 13:21:29 by camarcos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,3 +25,13 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 		i++;
 	}
 }
+/*
+int main()
+{
+	char str[] = "Hello World";
+	ft_striteri(str, &ft_toupper);
+	printf("%s\n", str);
+	return 0;
+}
+*/
+// aplica una funcion a cada caracter de la string

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camarcos <camarcos@student.42madrid>       +#+  +:+       +#+        */
+/*   By: camarcos <camarcos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 13:25:02 by camarcos          #+#    #+#             */
-/*   Updated: 2024/03/25 13:25:16 by camarcos         ###   ########.fr       */
+/*   Updated: 2024/04/18 10:32:05 by camarcos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,3 +23,13 @@ void	ft_bzero(void *pnt, size_t num)
 		i++;
 	}
 }
+/*
+int	main()
+{
+	char str[] = "Hello";
+	ft_bzero(str, 3);
+	printf("%s\n", str);
+	return 0;
+}
+*/
+//igual que memset reserva memoria pero inicializa con valor 0
