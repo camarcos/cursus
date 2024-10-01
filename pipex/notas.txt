@@ -1,0 +1,21 @@
+El proyecto pipex es una excelnte manera de aprender a trabajar con procesos
+en sistemas Unix, usando pipes para redirigir la entrada y salida entre programas, y
+comprender cómo funciona internamnete el shell para ejecutar comandos.
+-----
+fork: crea un nuevo proceso. El proceso hijo será una copia del padre, pero puede
+ejecutar código diferente.
+pipe: crea un pipe, que permite l comunicación entre dos procesos. Se utilizan dos 
+file descriptors, uno para lectura y otro para escritura.
+dup: 
+dup2: duplica un file descriptor, permitiendo redirigir la entrada o salida estándar hacia
+un archivo o un pipe.
+execve: reemplaza el proceso actual con otro programa (como un comando shell).
+waitpid: Espera a que un proceso hijo termine para evitar procesos zombie.
+-----
+< archivo1 comando1 | comando2 > archivo2
+Esto significa:
+Leer la entrada desde archivo1.
+Ejecutar comando1 con esa entrada.
+Pasar la salida de comando1 como entrada a comando2 mediante una tubería.
+Finalmente, redirigir la salida de comando2 a archivo2.
+-----
