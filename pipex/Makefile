@@ -6,7 +6,7 @@ LIBFT = libft/libft.a
 
 # SOURCE FILES
 SRC_DIR			=	src/
-SRC_FILES		= 	*****mis funciones******
+SRC_FILES		= 	pipex_utils.c pipex.c
 
 SRC				=	$(addprefix $(SRC_DIR), $(SRC_FILES))
 

@@ -6,11 +6,11 @@
 /*   By: camarcos <camarcos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 13:11:55 by camarcos          #+#    #+#             */
-/*   Updated: 2024/10/01 10:27:05 by camarcos         ###   ########.fr       */
+/*   Updated: 2024/10/03 13:16:32 by camarcos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "../includes/pipex.h"
 
 void	error(int code)
 {
@@ -20,13 +20,13 @@ void	error(int code)
 	exit(0);
 }
 
-int	openfile(char *rut, int value)
+int	openfile(char *rut, int valor)
 {
 	int	inout;
 
-	if (value == 0)
+	if (valor == 0)
 		inout = open(rut, O_RDONLY, 0777);
-	if (value == 1)
+	if (valor == 1)
 		inout = open(rut, O_WRONLY | O_CREAT | O_TRUNC, 0777);
 	if (inout == -1)
 		exit(0);
@@ -53,7 +53,7 @@ void	freearray(char **nomb)
 // libera las cadenas de forma individual dentro y luego el array principal
 // evitar fugas de memoria en el programa
 
-char	*getname(char *nomb, char **vari)
+char	*gtname(char *nomb, char **vari)
 {
 	int		i;
 	int		j;
@@ -80,32 +80,39 @@ char	*getname(char *nomb, char **vari)
 // nombre = variable (nomb = varia)
 // i --> recorre cada variable
 // j --> recorre cada caracter de la variable hasta =
+// sub = ... --> es 0 porq esta comparando  y son identicas las cadenas 
+// +1 empezar a devolver despues del =
 
-
-char	*get_path(char *cmd, char **varia)
+char	*gtpath(char *comnd, char **varia)
 {
 	int		i;
-	char	*exec;
-	char	**allpath;
+	char	**path;
+	char	**divcomnd;
 	char	*path_part;
-	char	**s_cmd;
+	char	*conca;
 
 	i = -1;
-	allpath = ft_split(my_getenv("PATH", varia), ':');
-	s_cmd = ft_split(cmd, ' ');
-	while (allpath[++i])
+	path = ft_split(gtname("PATH", varia), ':');
+	divcomnd = ft_split(comnd, ' ');
+	while (path[++i])
 	{
-		path_part = ft_strjoin(allpath[i], "/");
-		exec = ft_strjoin(path_part, s_cmd[0]);
+		path_part = ft_strjoin(path[i], "/");
+		conca = ft_strjoin(path_part, divcomnd[0]);
 		free(path_part);
-		if (access(exec, F_OK | X_OK) == 0)
+		if (access(conca, F_OK | X_OK) == 0)
 		{
-			ft_free_tab(s_cmd);
-			return (exec);
+			freearray(divcomnd);
+			return (conca);
 		}
-		free(exec);
+		free(conca);
 	}
-	ft_free_tab(allpath);
-	ft_free_tab(s_cmd);
-	return (cmd);
+	freearray(path);
+	freearray (divcomnd);
+	return (comnd);
 }
+
+// split --> divide en subcadenas	
+// : --> separador de las rutas
+// F_OK --> si funciona 
+// X_OK --> si es ejecutable
+// i = -1 porque se preincrementa antes de acceder
